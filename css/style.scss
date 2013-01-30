@@ -1,0 +1,186 @@
+$blue: #0f1e68;
+$baseFontSize: 16px;
+$baseFontColor: #555;
+$bodyCopy: "myriad-pro", Arial, sans-serif;
+
+
+@mixin transition {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+/* Box sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* GLOBAL TYPOGRAPHY DECLARATIONS */
+
+body, a, li, p {
+    font: $baseFontSize $bodyCopy;
+    color: $baseFontColor;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font: $baseFontSize*1.5 $bodyCopy;
+    line-height: 1;
+}
+
+p {
+    margin-bottom: 1 * $baseFontSize;
+}
+
+/* END OF GLOBAL TYPOGRAPHY */
+
+body {
+    background: #e6e6e6;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+#header {
+    width: 100%;
+    max-height: 540px;
+    border-top: 4px solid #6f635f;
+    position: relative;
+
+    #header_social {
+        width: 100%;
+        height: 50px;
+        background: rgba(255, 255, 255, .35);
+        position: absolute;
+        bottom: -5px;
+        z-index: 100;
+    }
+
+    #menu {
+        position: absolute;
+        left: 0px;
+        bottom: 0;
+        width: 235px;
+        height: 480px;
+        background: rgba(0, 0, 0, .2);
+        z-index: 200;
+
+        #logo {
+            width: 203px;
+            height: 140px;
+            padding: 90px 0 0 35px;
+            background: rgba(255, 255, 255, .4);
+            margin: 15px;
+            background-image: url("../images/logo_eleamare.png");
+            background-position: 40px 11px;
+            background-repeat: no-repeat;
+
+            h1 {
+                color: $blue;
+                font-size: 24px;
+                text-transform: uppercase;
+                font-family: "LetterGothicStd", sans-serif;
+
+                span {
+                    display: block;
+                    color: #463e37;
+                    font-size: 17px;
+                    font-family: "FuturistFixed-width", sans-serif;
+                    margin-left: 40px;
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        /* CHRIS, nested at #menu */
+        ul#nav {
+            padding: 10px 45px;
+
+            li {
+                padding: 5px 0;
+                text-align: center;
+                a {
+                    color: #f1f1f1;
+                    font-size: 1.2 * $baseFontSize;
+                    text-shadow: 0px 0px 2px #333;
+
+
+                    &:hover {
+                        color: #f4b94f;
+                        @include transition;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+#content {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+
+    .left_box {
+        width: 62%;
+        padding: 20px;
+        float: left;
+        border-right: 2px solid #ddd;
+
+        h2 {
+            color: #888;
+            font-style: italic;
+            margin-top: 0.5 * $baseFontSize;
+            margin-bottom: 0.75*$baseFontSize;
+        }
+
+        img {
+            margin-top: 30px;
+            margin-left: 15px;
+        }
+
+    }
+
+    .right_box {
+        float: right;
+        width: 38%;
+        padding: 20px;
+
+        img {
+            margin-bottom: 30px;
+        }
+    }
+
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+#footer {
+    width: 960px;
+    margin: 80px auto 0px;
+    padding-top: 30px;
+    border-top: 1px solid #ccc;
+
+    p {
+        text-align: center;
+        font-family: Georgia;
+
+        em {
+            font-style: italic;
+        }
+    }
+}
